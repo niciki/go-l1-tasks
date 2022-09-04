@@ -13,7 +13,7 @@ func main() {
 	chan2 := make(chan int)
 	// записываем параллельно числа из массива в канал
 	go func() {
-		for i := range arr {
+		for _, i := range arr {
 			chan1 <- i
 		}
 		close(chan1)
